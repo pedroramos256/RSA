@@ -44,10 +44,10 @@ long int encrypt(int msg,int n,int k/*either "e" or "d"*/){
 
 
 int main(){
-	int p = 61,q = 47;/*two big primes and "e" smaller than lcm(p-1,q-1)*/
+	int p = 61,q = 47;/*two primes and "e" smaller than lcm(p-1,q-1)*/
     int N = p*q, e = 17;/*public key */
 	int d = (p-1)*(q-1)+saunderson((p-1)*(q-1),e);/*private key together with p and q */
-    int MSG;/*message must be less than N */
+    int MSG;/*message must be less than N-1 */
 
     printf("Introduce an integer:\n");
     scanf("%d",&MSG);
